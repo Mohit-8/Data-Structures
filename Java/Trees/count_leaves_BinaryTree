@@ -1,0 +1,32 @@
+int countLeaves(Node node) 
+    {
+         // Your code
+         Queue<Node> q = new LinkedList<>();
+         if(node==null)
+         return 0;
+         q.add(node);
+         int c;
+         int count=0;
+         Node curr=null;
+         while(!q.isEmpty())
+         {
+             c=0;
+             curr=q.poll();
+             if(curr.left!=null)
+             q.add(curr.left);
+             else
+             c++;
+             
+             if(curr.right!=null)
+             q.add(curr.right);
+             else
+             c++;
+             
+             if(c==2)
+             {
+                 count++;
+             }
+         }
+         return count;
+         
+    }
