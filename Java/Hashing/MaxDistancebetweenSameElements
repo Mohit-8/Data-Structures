@@ -1,0 +1,18 @@
+ int maxDistance(int arr[], int n)
+    {
+	// Your code here
+	HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+	int dist=0;
+	for(int i=0;i<n;i++)
+	{
+	    if(hm.containsKey(arr[i]))
+	    {
+	        dist=Math.max(dist,i-hm.get(arr[i]));
+	    }
+	    else
+	    hm.put(arr[i],i);
+	    
+	}
+	return dist;
+	
+    }
